@@ -29,6 +29,10 @@ weight = 3
 name = "联系我们"
 url = "contact"
 weight = 4
+[[menu.main]]
+name = "加入我们"
+url = "https://talent.hoomenology.com/"
+weight = 5
 
 # Footer menu
 [[menu.footer]]

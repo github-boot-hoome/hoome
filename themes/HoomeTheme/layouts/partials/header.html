@@ -6,7 +6,7 @@
       <ul class="nav-top">
         {{ $menu := .Site.Menus.main }}
         {{ range $index, $element := $menu }}
-          <a href="{{ $.Site.BaseURL }}{{ .URL }}"><li class="active">{{.Name}}</li></a>
+          <a href="{{ if or (hasPrefix .URL "http://") (hasPrefix .URL "https://") }}{{ .URL }}{{ else }}{{ $.Site.BaseURL }}{{ .URL }}{{ end }}"><li class="active">{{.Name}}</li></a>
         {{ end }}
       </ul>
       <div class="nav-btn">
@@ -18,7 +18,7 @@
       <div class="nav-dialog-content">
       {{ $menu := .Site.Menus.main }}
       {{ range $index, $element := $menu }}
-        <a href="{{ $.Site.BaseURL }}{{ .URL }}"><p class="active">{{.Name}}</p></a>
+        <a href="{{ if or (hasPrefix .URL "http://") (hasPrefix .URL "https://") }}{{ .URL }}{{ else }}{{ $.Site.BaseURL }}{{ .URL }}{{ end }}"><p class="active">{{.Name}}</p></a>
         {{ end }}         
       </div>
   </div> 
